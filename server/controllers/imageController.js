@@ -3,9 +3,9 @@ import FormData from 'form-data';
 import userModel from '../models/userModel.js';
 
 export const generateImage = async (req, res) => {
-  console.log('🔄 generateImage route hit');
-  console.log('📦 req.user:', req.user);
-  console.log('📦 req.body:', req.body);
+  // console.log(' generateImage route hit');
+  // console.log(' req.user:', req.user);
+  // console.log('req.body:', req.body);
 
   const userId = req.user?.id;
   const prompt = req.body?.prompt;
@@ -16,7 +16,7 @@ export const generateImage = async (req, res) => {
 
   try {
     const user = await userModel.findById(userId);
-    console.log('👤 user:', user);
+    // console.log(' user:', user);
 
     if (!user) {
       return res.json({ success: false, message: 'User not found' });

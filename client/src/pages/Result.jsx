@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext'
 
 const Result = () => {
 
-  const [image, setImage] = useState(assets.background_img)
+  const [image, setImage] = useState(assets.puppy)
   const [isImageLoaded, setIsImageLoaded] = useState(false)
   const [loading, setLoading] = useState(false)
   const [input, setInput] = useState('')
@@ -101,7 +101,7 @@ const Result = () => {
       >
         <div className='relative group'>
           <motion.img
-            src="/puppy.avif"
+            src={image}
             alt=""
             className='max-w-sm w-full h-auto rounded-xl shadow-2xl transition-all duration-300 group-hover:shadow-3xl'
             whileHover={{ scale: 1.02 }}
@@ -146,45 +146,40 @@ const Result = () => {
         </div>
       </motion.div>
 
-      {/* Input Section - Enhanced */}
-      <AnimatePresence>
-        {!isImageLoaded && (
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className='flex w-full max-w-xl'
+      {/* Input Section - Always visible now */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        className='flex w-full max-w-xl mb-6'
+      >
+        <div className='flex w-full bg-gradient-to-r from-neutral-800 to-neutral-700 backdrop-blur-sm text-white text-sm p-1 rounded-full shadow-xl border border-neutral-600/50'>
+          <input
+            onChange={e => setInput(e.target.value)}
+            value={input}
+            disabled={loading}
+            type="text"
+            placeholder='Describe what you want to generate...'
+            className='flex-1 bg-transparent outline-none ml-6 max-sm:ml-4 placeholder-neutral-400 disabled:opacity-50 transition-opacity'
+          />
+          <motion.button
+            type="submit"
+            disabled={loading || !input.trim()}
+            className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 disabled:from-blue-400 disabled:to-blue-300 px-8 sm:px-12 py-3 rounded-full font-medium transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            whileHover={!loading && input.trim() ? { scale: 1.02 } : {}}
+            whileTap={!loading && input.trim() ? { scale: 0.98 } : {}}
           >
-            <div className='flex w-full bg-gradient-to-r from-neutral-800 to-neutral-700 backdrop-blur-sm text-white text-sm p-1 rounded-full shadow-xl border border-neutral-600/50'>
-              <input
-                onChange={e => setInput(e.target.value)}
-                value={input}
-                disabled={loading}
-                type="text"
-                placeholder='Describe what you want to generate...'
-                className='flex-1 bg-transparent outline-none ml-6 max-sm:ml-4 placeholder-neutral-400 disabled:opacity-50 transition-opacity'
-              />
-              <motion.button
-                type="submit"
-                disabled={loading || !input.trim()}
-                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 disabled:from-blue-400 disabled:to-blue-300 px-8 sm:px-12 py-3 rounded-full font-medium transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                whileHover={!loading && input.trim() ? { scale: 1.02 } : {}}
-                whileTap={!loading && input.trim() ? { scale: 0.98 } : {}}
-              >
-                {loading ? (
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>Generating</span>
-                  </div>
-                ) : (
-                  'Generate'
-                )}
-              </motion.button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {loading ? (
+              <div className="flex items-center space-x-2">
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <span>Generating</span>
+              </div>
+            ) : (
+              'Generate'
+            )}
+          </motion.button>
+        </div>
+      </motion.div>
 
       {/* Action Buttons - Enhanced */}
       <AnimatePresence>
@@ -194,10 +189,14 @@ const Result = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className='flex gap-4 flex-wrap justify-center text-sm mt-8'
+            className='flex gap-4 flex-wrap justify-center text-sm'
           >
             <motion.button
-              onClick={() => { setIsImageLoaded(false) }}
+              onClick={() => { 
+                setIsImageLoaded(false)
+                setInput('') // Clear the input field
+                setImage(assets.puppy) // Reset to default image
+              }}
               className='bg-transparent border-2 border-zinc-800 hover:border-zinc-700 text-zinc-800 hover:text-zinc-700 hover:bg-zinc-50 px-8 py-3 rounded-full cursor-pointer font-medium transition-all duration-200 shadow-lg'
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
