@@ -1,15 +1,9 @@
-import logo from './logo.svg'
-// import logo from './pictoria.png'
 import logo_icon from './logo_icon.svg'
 import facebook_icon from './facebook_icon.svg'
 import instagram_icon from './instagram_icon.svg'
 import twitter_icon from './twitter_icon.svg'
 import star_icon from './star_icon.svg'
 import rating_star from './rating_star.svg'
-import sample_img_1 from './sample_img_1.png'
-import sample_img_2 from './sample_img_2.png'
-import profile_img_1 from './profile_img_1.png'
-import profile_img_2 from './profile_img_2.png'
 import step_icon_1 from './step_icon_1.svg'
 import step_icon_2 from './step_icon_2.svg'
 import step_icon_3 from './step_icon_3.svg'
@@ -19,26 +13,23 @@ import cross_icon from './cross_icon.svg'
 import star_group from './star_group.png'
 import credit_star from './credit_star.svg'
 import profile_icon from './profile_icon.png'
-import background_img from './background.png'
+
 
 
 export const assets = {
-    logo,
     logo_icon,
     facebook_icon,
     instagram_icon,
     twitter_icon,
     star_icon,
     rating_star,
-    sample_img_1,
-    sample_img_2,
     email_icon,
     lock_icon,
     cross_icon,
     star_group,
     credit_star,
     profile_icon,
-    background_img,
+  
     
 }
 
@@ -61,27 +52,27 @@ export const stepsData = [
   ];
 
 export const testimonialsData = [
-    {
-        image:profile_img_1,
-        name:'himanshu singh',
-        role:'software engineer',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
-    },
-    {
-        image:profile_img_2,
-        name:'rekha kapariya',
-        role:'Content Creator',
-        stars:4,
-        text:`Using bg.removal has streamlined my workflow on Instagram like nothing else. I can confidently say it’s the most user-friendly background remover I’ve come across.`
-    },
-    {
-        image:profile_img_1,
-        name:'ashutosh thakur',
-        role:' Graphic Designer',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
-    },
+  {
+    image: "/ironman.jpg",
+    name: 'Tony Stark',
+    role: 'Vibe Coder',
+    stars: 5,
+    text: `This text-to-image generator is absolutely mind-blowing! I just type what I imagine, and it creates stunning visuals instantly. It has made my projects so much more creative.`
+  },
+  {
+    image: "wanda.webp",
+    name: 'Wanda',
+    role: 'Content Creator',
+    stars: 4,
+    text: `As a content creator, this tool is a game-changer. It saves me hours of searching for stock images. Now I can generate unique artwork tailored to my ideas within seconds.`
+  },
+  {
+    image: "/captain.avif",
+    name: 'Steve Rogers',
+    role: 'Avengers Lead',
+    stars: 5,
+    text: `I have tried many AI tools, but this text-to-image generator stands out. The quality of images is fantastic, and it gives me endless inspiration for my design work.`
+  },
 ]
 
 export const plans = [

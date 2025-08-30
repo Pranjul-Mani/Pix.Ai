@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/Header'
+import Hero from '../components/Hero'
 import Steps from '../components/Steps'
 import Description from '../components/Description'
 import Testimonials from '../components/Testimonials'
@@ -8,7 +8,7 @@ import GenerateBtn from '../components/GenerateBtn'
 const Home = () => {
   return (
     <div>
-      <Header />
+      <Hero />
       <Steps />
       <Description />
       <Testimonials />
@@ -17,4 +17,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
