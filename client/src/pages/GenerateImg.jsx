@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AppContext } from '../context/AppContext'
 
-const Result = () => {
+const GenerateImage = () => {
 
   const [image, setImage] = useState(assets.puppy)
   const [isImageLoaded, setIsImageLoaded] = useState(false)
@@ -84,6 +84,7 @@ const Result = () => {
   )
 
   return (
+    <div className=" bg-gradient-to-br from-purple-600 to-blue-600 ">
     <motion.form
       initial={{ opacity: 0.2, y: 100 }}
       transition={{ duration: 1 }}
@@ -220,7 +221,8 @@ const Result = () => {
         )}
       </AnimatePresence>
     </motion.form>
+    </div>
   )
 }
 
-export default Result
+export default GenerateImage;

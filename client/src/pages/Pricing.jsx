@@ -45,7 +45,7 @@ const Pricing = () => {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className='min-h-[80vh] text-center pt-14 mb-10 relative overflow-hidden'
+      className='min-h-[80vh] text-center pt-14  relative overflow-hidden'
     >
       {/* Background decorative elements */}
       <div className='absolute inset-0 -z-10'>
@@ -214,22 +214,7 @@ const Pricing = () => {
         transition={{ duration: 0.8, delay: 1 }}
         className='mt-16 text-center'
       >
-        <div className='inline-flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-600 bg-white/50 backdrop-blur-sm rounded-full px-6 py-4 border border-gray-200'>
-          <div className='flex items-center gap-2'>
-            <span className='text-green-500'>🔒</span>
-            <span>Secure payments</span>
-          </div>
-          <div className='hidden sm:block w-1 h-1 bg-gray-400 rounded-full'></div>
-          <div className='flex items-center gap-2'>
-            <span className='text-blue-500'>🌟</span>
-            <span>No subscription required</span>
-          </div>
-          <div className='hidden sm:block w-1 h-1 bg-gray-400 rounded-full'></div>
-          <div className='flex items-center gap-2'>
-            <span className='text-purple-500'>⚡</span>
-            <span>Instant activation</span>
-          </div>
-        </div>
+        
       </motion.div>
     </motion.div>
   )

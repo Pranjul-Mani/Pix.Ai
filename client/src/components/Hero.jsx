@@ -8,18 +8,21 @@ import { AppContext } from "../context/AppContext"
 const Header = () => {
   const { user, setShowLogin } = useContext(AppContext)
 
-  const onClickHandler = () => {
-    if (user) {
-      if (typeof window !== "undefined") {
-        window.location.href = "/result"
-      }
-    } else {
-      setShowLogin(true)
+ const onClickHandler = () => {
+  if (user) {
+    const element = document.getElementById("explore-tools");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
+  } else {
+    setShowLogin(true);
   }
+};
+
 
   return (
     <motion.header
+      onClick={onClickHandler}
       initial={{ opacity: 0.2, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -28,7 +31,9 @@ const Header = () => {
     >
       <div className="flex items-center justify-between gap-8 lg:gap-12">
         
+        {/* Left Content */}
         <div className="flex-1 max-w-2xl">
+          {/* Tagline */}
           <motion.div
             className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-3 py-1 text-neutral-700"
             initial={{ opacity: 0, y: -12 }}
@@ -37,29 +42,35 @@ const Header = () => {
             aria-label="Product tagline"
           >
             <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
-            <span className="text-sm">Text-to-Image, reimagined</span>
+            <span className="text-sm">All-in-One AI Image Toolkit</span>
             <img src={assets.star_icon || "/placeholder.svg"} alt="" className="h-4 w-4" />
           </motion.div>
 
+          {/* Heading */}
           <motion.h1
             className="text-balance mt-6 text-4xl font-semibold leading-tight text-neutral-900 sm:text-5xl lg:text-6xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 1.2 }}
           >
-            Next Vision.
+            Create, Enhance & Transform Images with AI
           </motion.h1>
 
+          {/* Subtext */}
           <motion.p
             className="mt-4 text-base leading-6 text-neutral-600 sm:text-lg sm:leading-7"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.6 }}
           >
-            Leverage generative AI to turn your ideas into{" "}
-            <span className="font-medium text-blue-600">stunning images</span> in seconds.
+            From <span className="font-medium text-blue-600">text-to-image generation </span> 
+            to <span className="font-medium text-blue-600">background replacement</span>, 
+            <span className="font-medium text-blue-600"> image upscaling</span>, and 
+            <span className="font-medium text-blue-600"> text removal</span> — our 
+            AI tools give you everything you need to bring your ideas to life.
           </motion.p>
 
+          {/* CTA */}
           <motion.div
             className="mt-8 flex justify-start"
             initial={{ opacity: 0 }}
@@ -72,15 +83,14 @@ const Header = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
-              Generate Images
+              Explore AI Features
               <img className="h-5" src={assets.star_group || "/placeholder.svg"} alt="" />
             </motion.button>
           </motion.div>
         </div>
 
-        {/* Right side - Both floating images */}
+        {/* Right side - floating images remain unchanged */}
         <div className="relative hidden md:block flex-shrink-0 w-96 h-[28rem]">
-          
           <motion.div
             aria-hidden="true"
             className="pointer-events-none absolute top-0 right-0"
@@ -95,15 +105,12 @@ const Header = () => {
               <img
                 src="/main1.jpg"
                 alt=""
-                onError={(e) => {
-                  e.currentTarget.src = assets.sample_img_1
-                }}
+                onError={(e) => { e.currentTarget.src = assets.sample_img_1 }}
                 className="h-80 w-56 rounded-xl object-cover"
               />
             </div>
           </motion.div>
 
-          {/* Second floating image - positioned to the left and slightly below */}
           <motion.div
             aria-hidden="true"
             className="pointer-events-none absolute top-16 left-0"
@@ -112,30 +119,20 @@ const Header = () => {
             transition={{
               duration: 0.8,
               delay: 0.2,
-              y: { 
-                duration: 6, 
-                repeat: Number.POSITIVE_INFINITY, 
-                repeatType: "mirror", 
-                ease: "easeInOut",
-                delay: 3 // Offset animation to create staggered effect
-              },
+              y: { duration: 6, repeat: Number.POSITIVE_INFINITY, repeatType: "mirror", ease: "easeInOut", delay: 3 },
             }}
           >
             <div className="rounded-2xl border border-white/30 bg-white/60 p-2 shadow-md backdrop-blur-md">
               <img
                 src="/main2.jpg"
                 alt=""
-                onError={(e) => {
-                  e.currentTarget.src = assets.sample_img_2
-                }}
+                onError={(e) => { e.currentTarget.src = assets.sample_img_2 }}
                 className="h-80 w-56 rounded-xl object-cover"
               />
             </div>
           </motion.div>
         </div>
       </div>
-
-   
     </motion.header>
   )
 }

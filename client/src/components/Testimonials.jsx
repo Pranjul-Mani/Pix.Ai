@@ -64,7 +64,7 @@ const Testimonials = () => {
             {/* Background Elements */}
             <div className="absolute inset-0 -z-10">
                 {/* Animated background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-60" />
+                {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-60" /> */}
                 
                 {/* Floating shapes */}
                 <motion.div
