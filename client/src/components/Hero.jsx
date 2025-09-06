@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <motion.header
-      onClick={onClickHandler}
+      
       initial={{ opacity: 0.2, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

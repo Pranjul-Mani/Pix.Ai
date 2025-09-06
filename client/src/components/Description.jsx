@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const Description = () => {
   const [hoveredCard, setHoveredCard] = useState(null)
 
-  // Gallery data with text prompts and corresponding images
+  
   const galleryItems = [
     {
       id: 1,
@@ -101,7 +101,7 @@ const Description = () => {
         </div>
       </div>
 
-      {/* Gallery Grid */}
+     
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -118,7 +118,7 @@ const Description = () => {
             onMouseLeave={() => setHoveredCard(null)}
             whileHover={{ y: -8 }}
           >
-            {/* Image Container */}
+            
             <div className="relative h-64 overflow-hidden">
               <img
                 src={item.image}
@@ -126,14 +126,14 @@ const Description = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               
-              {/* Category Badge */}
+           
               <div className="absolute top-4 left-4">
                 <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
                   {item.category}
                 </span>
               </div>
 
-              {/* Overlay */}
+              
               <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
                 hoveredCard === item.id ? 'opacity-100' : 'opacity-0'
               }`}>
@@ -147,20 +147,12 @@ const Description = () => {
               </div>
             </div>
 
-            {/* Card Content */}
+          
             <div className="p-6">
               <p className="text-gray-700 text-sm line-clamp-2">
                 {item.prompt}
               </p>
               
-              {/* Generate Similar Button */}
-              {/* <motion.button
-                className="mt-4 w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:shadow-lg opacity-0 group-hover:opacity-100"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Generate Similar
-              </motion.button> */}
             </div>
           </motion.div>
         ))}

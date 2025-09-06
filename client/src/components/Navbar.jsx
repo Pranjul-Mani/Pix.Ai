@@ -15,7 +15,7 @@ const Navbar = () => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showFeaturesMenu, setShowFeaturesMenu] = useState(false);
 
-  // first letter of user name
+ 
   const userInitial = user ? user.name.charAt(0).toUpperCase() : "";
 
   useEffect(() => {
@@ -38,9 +38,9 @@ const Navbar = () => {
   // Handle feature click
   const handleFeatureClick = (path) => {
     if (!user) {
-      setShowLogin(true); // open login modal
+      setShowLogin(true); 
     } else {
-      navigate(path); // go to feature page
+      navigate(path); 
     }
     setShowFeaturesMenu(false);
   };
@@ -55,7 +55,7 @@ const Navbar = () => {
       <div className="flex items-center gap-6">
         {/* Left Navigation */}
         <div className="hidden sm:flex items-center gap-6 text-gray-700 font-medium">
-          {/* Credits visible only after login */}
+          
           {user && (
             <button
               onClick={() => navigate('/pricing')}
@@ -101,7 +101,7 @@ const Navbar = () => {
         {/* Right Side */}
         {user ? (
           <div className="flex items-center gap-3 sm:gap-4">
-            {/* Profile circle */}
+           
             <div className="relative" ref={profileRef}>
               <div
                 onClick={() => setShowProfileMenu(!showProfileMenu)}

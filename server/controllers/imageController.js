@@ -29,7 +29,6 @@ export const generateImage = async (req, res) => {
       });
     }
 
-    // 🔗 call ClipDrop
     const formData = new FormData();
     formData.append('prompt', prompt);
 
@@ -49,7 +48,7 @@ export const generateImage = async (req, res) => {
     const resultImage = `data:image/png;base64,${base64Image}`;
 
 
-    // 💳 decrement credit & save
+    //  decrement credit & save
     user.creditBalance -= 1;
     await user.save();
 

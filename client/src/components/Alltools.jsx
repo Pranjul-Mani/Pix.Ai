@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { motion } from 'framer-motion'
 import { ImageIcon, ZoomIn, Scissors, Type } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { AppContext } from '../context/AppContext'   // ✅ import context
+import { AppContext } from '../context/AppContext'   
 
 const toolsData = [
   {
@@ -37,7 +37,7 @@ const toolsData = [
 
 const Steps = () => {
   const navigate = useNavigate()
-  const { user, setShowLogin } = useContext(AppContext)   // ✅ get auth from context
+  const { user, setShowLogin } = useContext(AppContext)   
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,9 +56,9 @@ const Steps = () => {
   // ✅ Handle feature click
   const handleToolClick = (link) => {
     if (!user) {
-      setShowLogin(true)   // 🔒 show login popup
+      setShowLogin(true)   
     } else {
-      navigate(link)       // ✅ go to feature page
+      navigate(link)       
     }
   }
 
@@ -99,7 +99,7 @@ const Steps = () => {
             key={index}
             variants={cardVariants}
             whileHover="hover"
-            onClick={() => handleToolClick(tool.link)}   // ✅ protected click
+            onClick={() => handleToolClick(tool.link)}   
             className="relative group cursor-pointer"
           >
             {/* Glow Effect */}

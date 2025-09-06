@@ -113,7 +113,7 @@ const Footer = () => {
                 </div>
                 <div className="group">
                   <div className="text-gray-400 text-sm mb-1">Phone</div>
-                  <a href="tel:+919876543210" className="text-gray-300 hover:text-green-400 transition-colors flex items-center gap-2">
+                  <a href="tel:+9198765XXXXX" className="text-gray-300 hover:text-green-400 transition-colors flex items-center gap-2">
                     <span className="text-green-400">📞</span>
                     +91 98765 XXXXX
                   </a>
@@ -188,7 +188,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
-              <span>&copy; {currentYear} Pix.Ai. All rights reserved.</span>
+              <span>&copy; {currentYear} Pix.Ai All rights reserved.</span>
               <div className="flex gap-4">
                 <a href="/" className="hover:text-white transition-colors">Terms</a>
                 <a href="/" className="hover:text-white transition-colors">Privacy</a>
@@ -196,18 +196,7 @@ const Footer = () => {
               </div>
             </div>
             
-            {/* Made with love */}
-            {/* <div className="flex items-center gap-2 text-sm text-gray-400">
-              <span>Made with</span>
-              <motion.span 
-                className="text-red-400 text-base"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-              >
-                ❤️
-              </motion.span>
-              <span>for creators worldwide</span>
-            </div> */}
+           
           </div>
         </motion.div>
       </div>

@@ -21,7 +21,7 @@ const AppContextProvider = (props) => {
     try {
       const { data } = await axios.get(backendUrl + '/api/user/credits', {
         headers: {
-          Authorization: `Bearer ${token}`,  // ✅ Correct way
+          Authorization: `Bearer ${token}`,  
         },
       });
 
@@ -43,7 +43,7 @@ const AppContextProvider = (props) => {
         { prompt },
         {
           headers: {
-            Authorization: `Bearer ${token}`, // ✅ Proper token format
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -165,8 +165,6 @@ const AppContextProvider = (props) => {
 
 
 
-
-  //logout
   const logout = () => {
     localStorage.removeItem('token');
     setToken('')

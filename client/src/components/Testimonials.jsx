@@ -63,10 +63,7 @@ const Testimonials = () => {
         >
             {/* Background Elements */}
             <div className="absolute inset-0 -z-10">
-                {/* Animated background gradient */}
-                {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-60" /> */}
                 
-                {/* Floating shapes */}
                 <motion.div
                     variants={floatingVariants}
                     animate="animate"
@@ -129,10 +126,10 @@ const Testimonials = () => {
                             transition: { duration: 0.3 }
                         }}
                     >
-                        {/* Glow effect */}
+                      
                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" />
                         
-                        {/* Quote mark */}
+                       
                         <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-lg font-bold">
                             "
                         </div>
@@ -147,7 +144,7 @@ const Testimonials = () => {
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
                                 />
-                                {/* Status indicator */}
+                                
                                 <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
                                     <span className="text-white text-xs">✓</span>
                                 </div>
@@ -158,7 +155,7 @@ const Testimonials = () => {
                                 {testimonial.role}
                             </p>
 
-                            {/* Animated stars */}
+                           
                             <div className='flex mb-6 gap-1'>
                                 {Array(testimonial.stars).fill().map((_, starIndex) => (
                                     <motion.img 
@@ -182,7 +179,7 @@ const Testimonials = () => {
                                 <span className="text-blue-500 text-4xl absolute -bottom-6 -right-2 opacity-20">"</span>
                             </p>
 
-                            {/* Like button */}
+                           
                             <motion.button
                                 className="mt-6 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300"
                                 whileHover={{ scale: 1.05 }}
