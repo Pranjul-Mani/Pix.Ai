@@ -1,7 +1,7 @@
 
-# Pix.Ai – Text-to-Image Generator
+# Pix.Ai – Create, Enhance & Transform Images with AI
 
-A modern AI-powered web application that converts text prompts into stunning images. Built with React, Node.js, Tailwind CSS, Express.js, and MongoDB integration, this project delivers a smooth, responsive, and secure experience for generating and downloading AI-generated images.
+A full-stack AI-powered web application offering multiple tools such as text-to-image generation, background replacement, image upscaling, and text removal. Delivering a responsive, secure, and user-friendly experience for editing and generating AI-based images.
 ## Table of Contents
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -12,15 +12,18 @@ A modern AI-powered web application that converts text prompts into stunning ima
 
 ## Features
 
-- **Text-to-Image Conversion** – Generate high-quality AI images from custom text prompts
+- **All-in-One Platform –** Integrated AI tools in a single, responsive web application with modern UI/UX.
 
-- **Modern UI** – Clean, responsive interface with TailwindCSS & Lucide icons
+- **AI Text-to-Image –** Convert natural language prompts into 100+ unique, high-quality images.
 
-- **Fast Performance** – Powered by Vite + React 19 frontend
+- **Background Replacement –** Instantly remove and replace image backgrounds using AI.
 
-- **User Authentication** – Secure login/signup with JWT & bcrypt
+- **Image Upscaling –** Enhance and upscale low-resolution images without losing quality.
 
-- **Responsive Design** – Works across desktop, tablet, and mobile devices
+- **Text Removal –** Seamlessly erase unwanted text while preserving image details.
+
+- **Responsive Design –** Works across desktop, tablet, and mobile devices.
+
 
 
 
